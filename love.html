@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Vedant ❤️</title>
+<style>
+body{
+ margin:0;
+ background:#b30000;
+ color:white;
+ text-align:center;
+ font-family:Arial;
+ overflow:hidden;
+ animation:heartbeat 2s infinite;
+ transition:opacity 1s;
+}
+@keyframes heartbeat{
+ 0%{background:#b30000;}
+ 50%{background:#cc0000;}
+ 100%{background:#b30000;}
+}
+
+.envelope{
+ width:260px;
+ height:160px;
+ background:white;
+ margin:120px auto 20px;
+ border-radius:10px;
+ position:relative;
+ cursor:pointer;
+ transition:transform 1s;
+}
+.envelope:hover{transform:scale(1.05);}
+.envelope:before{
+ content:'';
+ position:absolute;
+ top:-80px;
+ border-left:130px solid transparent;
+ border-right:130px solid transparent;
+ border-bottom:80px solid white;
+}
+
+.message{
+ display:none;
+ background:white;
+ color:#b30000;
+ margin:20px;
+ padding:20px;
+ border-radius:15px;
+ animation:fadeIn 2s;
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+button{
+ padding:10px 20px;
+ border-radius:20px;
+ border:none;
+ background:#b30000;
+ color:white;
+ font-weight:bold;
+}
+
+.heart,.melt{position:absolute;}
+.heart{font-size:16px;animation:float 6s linear infinite;}
+.melt{font-size:24px;opacity:0.15;animation:melt 12s linear infinite;}
+@keyframes float{0%{transform:translateY(100vh);}100%{transform:translateY(-10vh);}}
+@keyframes melt{0%{transform:translateY(-10vh);}100%{transform:translateY(110vh);}}
+</style>
+</head>
+<body>
+
+<h2>Click Here Key 🔑</h2>
+
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="message" id="msg">
+Vedant ❤️<br><br>
+From the moment you walked into my life, everything became beautiful 🌸  
+You are my strength, my smile, my forever 💍💖  
+I choose you. Always. ♾️  
+– Jui 💕
+<br><br>
+<h3 id="days"></h3>
+<br>
+<button onclick="next()">Continue 💌</button>
+</div>
+
+<audio autoplay loop>
+<source src="YOUR_VAROON_MP3_LINK_HERE" type="audio/mpeg">
+</audio>
+
+<script>
+function openLetter(){
+ document.getElementById("msg").style.display="block";
+}
+const start=new Date("July 27, 2024");
+const today=new Date();
+const diff=Math.floor((today-start)/(1000*60*60*24));
+document.getElementById("days").innerHTML=
+"It’s been 💖 "+diff+" days since 27 July 2024";
+
+function next(){
+ document.body.style.opacity="0";
+ setTimeout(()=>{window.location="valentine.html";},1000);
+}
+
+/* effects */
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="💗";
+ h.style.left=Math.random()*100+"vw";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},300);
+
+setInterval(()=>{
+ let m=document.createElement("div");
+ m.className="melt";
+ m.innerHTML="🫠";
+ m.style.left=Math.random()*100+"vw";
+ document.body.appendChild(m);
+ setTimeout(()=>m.remove(),12000);
+},2000);
+</script>
+
+</body>
+</html>
