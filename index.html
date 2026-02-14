@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jui ❤️ Vedant - Forever</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Floating red Hearts and kisses */
+.heart and kisses {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Gallery */
+.gallery img {
+  width: 200px;
+  margin: 8px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 15px;
+}
+
+#yesBtn {
+  background: white;
+  color: #ff4e8a;
+}
+
+#noBtn {
+  background: #ff4e8a;
+  color: white;
+  position: absolute;
+}
+
+/* Proposal Box */
+#proposalBox {
+  display: none;
+  background: white;
+  color: #ff4e8a;
+  padding: 30px;
+  border-radius: 20px;
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+/* Fireworks */
+.firework {
+  position: fixed;
+  font-size: 30px;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* Ring Animation */
+#ring {
+  display: none;
+  font-size: 80px;
+  margin-top: 20px;
+  animation: ringPop 1s ease-in-out infinite alternate;
+}
+
+@keyframes ringPop {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<iframe width="0" height="0" 
+src="https://www.youtube.com/embed/0cF1gJqYz4w?autoplay=1&loop=1&playlist=0cF1gJqYz4w" 
+frameborder="0" allow="autoplay">
+</iframe>
+
+<h1>Jui ❤️ Vedant</h1>
+<h3>Since 27 july 2024 ✨</h3>
+
+<p>
+From Vanilla pastryyyy dates 🍰  
+to forever promises…  
+Vedant, you are my home.
+</p>
+
+<div class="gallery">
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+  <img src="photo4.jpg">
+  <img src="photo5.jpg">
+</div>
+
+<h2>Will you be mine forever? 💍</h2>
+
+<button id="yesBtn" onclick="celebrate()">YES 💖</button>
+<button id="noBtn">NO 😏</button>
+
+<div id="proposalBox">
+  <h2>HE SAID YES 😭❤️</h2>
+  <p>
+  I’m sorry for every rude word.  
+  My love has always been real.  
+  From 27 july 2024 to forever.  
+  Forever Yours,  
+  Jui 💕
+  </p>
+
+  <div id="ring">💍</div>
+</div>
+
+<script>
+
+/* Floating Hearts */
+setInterval(function() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(function(){ heart.remove(); }, 6000);
+}, 300);
+
+/* Running NO button */
+var noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", function() {
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+/* Celebration */
+function celebrate() {
+
+  document.getElementById("proposalBox").style.display = "block";
+  document.getElementById("ring").style.display = "block";
+
+  // Fireworks
+  for(let i=0; i<30; i++){
+    let fire = document.createElement("div");
+    fire.className = "firework";
+    fire.innerHTML = "✨";
+    fire.style.left = Math.random() * 100 + "vw";
+    fire.style.top = Math.random() * 100 + "vh";
+    document.body.appendChild(fire);
+
+    setTimeout(()=>{ fire.remove(); },1000);
+  }
+}
+
+</script>
+
+</body>
+</html> 
